@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symphart!{% endblock %}
+
+{% block body %}
+    {% if articles %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Article Title</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <td>{{ article.title }}</td>
+                        <td><a href="/symphart/public/article/{{ article.id }}" class="btn btn-dark">Show</a></td>
+                        <td><a href="/symphart/public/delete/{{ article.id }}" class=" btn btn-danger">Cancella</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>no articles to display</p>
+    {% endif %}
+{% endblock %}

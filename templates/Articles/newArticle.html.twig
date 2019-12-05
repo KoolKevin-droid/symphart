@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symphart!{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h2>{{stato}}</h2>
+
+        <form action="/symphart/public/save" method="GET">
+            <label for="titolo">titolo</label>
+            <input class="form-control" type="text" name="titolo">
+            <label for="titolo">contenuto</label>
+            <textarea rows="10" class="form-control" name="contenuto"></textarea>
+
+            <br>
+            <input class="btn btn-primary" type="submit" value="submit">
+            <a href="/symphart/public">Go bak</a>
+        </form>
+    </div>
+
+{% endblock %}
